@@ -7,5 +7,5 @@ module.exports = {
   rootPath: path.resolve(__dirname, ".."),
   serviceNAME: process.env.SERVICE_NAME,
   jwtKey: process.env.SECRET,
-  urlDb: process.env.MONGO_URI,
+  urlDb: process.env.MONGO_URL,
 };
