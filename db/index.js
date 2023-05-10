@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const { urlDb } = require("../config");
 
+var MongoClient = require("mongodb").MongoClient;
+
 mongoose.connect(urlDb, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
