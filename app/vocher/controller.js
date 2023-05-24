@@ -14,6 +14,8 @@ module.exports = {
       const vocher = await Vocher.find()
         .populate("category")
         .populate("nominals");
+      // .populate("payment");
+
       res.render("admin/vocher/view_vocher", {
         vocher,
         alert,

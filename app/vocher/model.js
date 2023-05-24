@@ -26,11 +26,16 @@ let voucherSchema = mongoose.Schema({
       ref: "Nominal",
     },
   ],
-
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  payment: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Payment",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Voucher", voucherSchema);

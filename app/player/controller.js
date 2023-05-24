@@ -24,10 +24,17 @@ module.exports = {
   detailPage: async (req, res) => {
     try {
       const { id } = req.params;
+
       const vocher = await Vocher.findOne({ _id: id })
         .populate("category")
         .populate("nominals")
-        .populate("user", "_id name phoneNumber");
+        .populate("user", "_id name phoneNumber")
+        .populate("payment")
+        .populate({ path: "payment", populate: { path: "banks" } });
+      // .exec(function (err, conversation) {
+      //   console.log(conversation.payment[0]);
+      // });
+      // .populate("banks");
 
       if (!vocher) {
         return res
